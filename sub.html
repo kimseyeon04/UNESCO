@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xh9gmkda64"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>유네스코 문화유산 추천</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="container-fluid">
+            <h1>유네스코 문화유산 지도</h1>
+        </header>
+        <nav class="container-fluid">
+            <ul>
+                <li><a href="./index.html">소개</a></li>
+                <li><a href="./sub.html">나만의 유네스코 여행지도 만들기</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="form-description">
+                <p>
+                    여행하고 싶은 지역과 방문하고 싶은 유네스코 문화유산의 수를 선택해주세요.
+                </p>
+                <p>
+                    선택을 바탕으로, 나만의 유네스코 문화유산 여행코스를 추천해드립니다
+                </p>
+            </div>
+            <form id="heritageForm">
+                <label for="region">문화유산 지역선택</label>
+                <select id="region" name="region">
+                    <option>지역을 선택하세요</option>
+                    <option>서울특별시</option>
+                    <option>경기도</option>
+                    <option>인천광역시</option>
+                    <option>강원도</option>
+                    <option>세종특별시</option>
+                    <option>충청북도</option>
+                    <option>충청남도</option>
+                    <option>전북특별자치도</option>
+                    <option>전라남도</option>
+                    <option>경상북도</option>
+                    <option>경상남도</option>
+                    <option>대전광역시</option>
+                    <option>광주광역시</option>
+                    <option>제주특별자치도</option>
+                </select>
+                <label for="number">추천받고 싶은 문화유산 개수</label>
+                <select id="number" name="number">
+                    <option>개수를 선택하세요</option>
+                    <option>1개</option>
+                    <option>2개</option>
+                    <option>3개</option>
+                    <option>4개</option>
+                    <option>5개</option>
+                </select>
+            </form>
+            <div id="results"></div>
+            <div id="map" style="width:100%;height:400px;"></div>
+        </main>
+        <footer class="container">
+            <small>© 2024 유네스코 문화유산 지도</small>
+        </footer>
+        
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                zoom: 10
+            };
+            
+            var map = new naver.maps.Map('map', mapOptions);
+            </script>
+
+
+    </body>
+</html>
